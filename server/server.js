@@ -15,10 +15,12 @@ const shelfRouter = require('./routes/shelf.router');
 const UploaderS3Router = require('react-dropzone-s3-uploader/s3router')
 
 app.use('/s3', UploaderS3Router ({
-  bucket: 'art-gallery-primesolo',                           // required
+  bucket: 'art-gallery-primesolo',                // required
   region: 'us-east-2',                            // optional
   headers: {'Access-Control-Allow-Origin': '*'},  // optional
-  ACL: 'private',                                 // this is the default - set to `public-read` to let anyone view uploads
+  // ACL: 'private',                                 // this is the default - set to `public-read` to let anyone view uploads
+  ACL: 'public-read',
+  signatureVersion: 'v4',
 }));
 
 // Body parser middleware
