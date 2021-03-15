@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import {Button, TextField} from '@material-ui/core';
 import SaveIcon from '@material-ui/icons/Save';
+import ImageUpload from '../ImageUpload/ImageUpload';
 
 function ShelfForm() {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ function ShelfForm() {
   return(
 
       <form onSubmit={addItem}>
+        <ImageUpload />
         <label htmlFor="imageURL">
           <TextField
             variant="outlined"
@@ -53,3 +55,4 @@ function ShelfForm() {
 }
 
 export default ShelfForm;
+
