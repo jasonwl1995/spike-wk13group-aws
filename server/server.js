@@ -11,6 +11,9 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const shelfRouter = require('./routes/shelf.router');
 
+// TODO AWS const
+const UploaderS3Router = require('react-dropzone-s3-uploader/s3router')
+
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
